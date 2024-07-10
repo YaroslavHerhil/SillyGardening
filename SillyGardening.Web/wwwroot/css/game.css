@@ -1,0 +1,331 @@
+﻿html, body {
+    height: 100%;
+    width: 100%
+}
+
+body {
+    background-image: url(../images/background.png);
+    background-repeat: repeat;
+}
+
+.game-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: solid 2px brown;
+    background-color: lightgoldenrodyellow;
+    height: 100%;
+    width: 100%
+}
+
+.garden-container {
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    background-image: url(../images/gardenbg.png);
+    position: relative;
+}
+
+.plot {
+    width: 130px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+}
+
+#plot1 {
+    top: calc(410px - 200px);
+    left: calc(225px - 130px / 2);
+}
+
+#plot2 {
+    top: calc(400px - 200px);
+    left: calc(450px - 130px / 2);
+}
+
+#plot3 {
+    top: calc(420px - 200px);
+    left: calc(760px - 130px / 2);
+}
+
+#plot4 {
+    top: calc(390px - 200px);
+    left: calc(1025px - 130px / 2);
+}
+
+#plot5 {
+    top: calc(755px - 200px);
+    left: calc(250px - 130px / 2);
+}
+
+#plot6 {
+    top: calc(785px - 200px);
+    left: calc(525px - 130px / 2);
+}
+
+#plot7 {
+    top: calc(765px - 200px);
+    left: calc(770px - 130px / 2);
+}
+
+#plot8 {
+    top: calc(775px - 200px);
+    left: calc(1020px - 130px / 2);
+}
+
+.plot button {
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    background-image: url(../images/ButtonPlantDis.png);
+}
+.plot button:hover {
+    background-image: url(../images/ButtonPlantAct.png);
+}
+
+.plant {
+    position: relative;
+    top: -170px;
+    height: 200px;
+    width: 130px;
+    animation: skew alternate 15s infinite ease-in-out,
+                squish alternate 5s infinite ease-in-out;
+    transform-origin: bottom;
+}
+
+@keyframes skew {
+    0%, 100% {
+        transform: skewY(0deg);
+    }
+
+    50% {
+        transform: skewY(-5deg);
+    }
+
+    75% {
+        transform: skewY(5deg);
+    }
+}
+@keyframes squish {
+    0%, 100% {
+        transform: scaleY(1) scaleX(1);
+    }
+
+    50% {
+        transform: scaleY(0.9) scaleX(1.1);
+    }
+
+}
+
+.plant img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.flower {
+    background-image: url(../images/plants/flower.png)
+}
+.cucumber {
+    background-image: url(../images/plants/cucumber.png)
+}
+.tree {
+    background-image: url(../images/plants/tree.png)
+}
+.snakegrass {
+    background-image: url(../images/plants/snakegrass.png)
+}
+.sunflower {
+    background-image: url(../images/plants/sunflower.png)
+}
+
+.mailflower {
+    background-image: url(../images/plants/mailflower.png)
+}
+
+.coolflower {
+    background-image: url(../images/plants/coolflower.png)
+}
+
+.venus {
+    background-image: url(../images/plants/venus.png)
+}
+
+
+
+
+.life-progress-bar, .progress-bar {
+    position: absolute;
+    right: -10px;
+    height: 10px;
+    width: 150px;
+    background-color: #ddd;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+
+.progress-bar {
+    bottom: -25px;
+}
+.life-progress-bar {
+    bottom: -45px;
+}
+
+.progress-text, .life-progress-text {
+    font-size: 10px;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 800;
+    color: white;
+    background-color: black;
+    position: absolute;
+    letter-spacing: 2px;
+    left: 50%;
+}
+.progress-text {
+    transform: translateX(-50%);
+}
+.life-progress-text {
+    transform: translateX(-50%);
+}
+
+
+
+.plot-progress, .life-progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    background-repeat: repeat;
+    
+    animation: scrollBackground 1s linear infinite;
+}
+
+.plot-progress {
+    background-image: url(../images/progress.png);
+}
+.life-progress {
+    background-image: url(../images/lifeprogress.png);
+    
+}
+
+
+
+
+
+
+@keyframes scrollBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+
+.ui-container {
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.stats {
+    font-size: 34px;
+    font-weight: 700;
+    width: 600px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+.stats img {
+    height: 64px;
+    width: 64px;
+}
+
+#profilePlaque{
+    display: none;
+}
+
+
+.auth-options {
+    align-items: center;
+    float: right;
+}
+
+    .auth-options button {
+        text-align: center;
+        height: 60px;
+        width: 100px;
+        border-radius: 3px;
+        margin: 10px
+    }
+
+.auth-background {
+    padding: 20px;
+    position: absolute;
+    background-color: #00000030;
+    box-shadow: 0px 0px 20px 20px #00000030;
+    height: 800px;
+    width: 1200px;
+    z-index: 100;
+    margin: auto;
+    top: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-foreground {
+    position: relative;
+    padding: 20px;
+    background-color: beige;
+    border-radius: 10px;
+    height: 350px;
+    width: 600px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 40px 60px 40px 60px 75px;
+    margin: auto;
+    top: 200px;
+    font-size: 22px;
+}
+
+
+    .auth-foreground label, .auth-foreground input {
+        grid-column: 1/3;
+    }
+
+
+#closeAuthButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: maroon;
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
+
+    #closeAuthButton:hover {
+        background-color: #800808;
+        color: white;
+    }
+
+#commentDiv {
+    display: absolute;
+    display: block;
+    margin: auto;
+}

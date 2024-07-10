@@ -1,0 +1,82 @@
+﻿@model SillyGardening.Core.GameComponents.GameSession
+@{
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="~/css/game.css" asp-append-version="true" />
+
+
+
+<div class="game-container">
+    <div id="auth" class="auth-background">
+        <div class="auth-foreground">
+            <button id="closeAuthButton">X</button>
+
+            <label class="auth-element" for="userName">Your user name!</label>
+            <input class="auth-element" id="userName" name="userName" />
+            <label class="auth-element" for="userPass">Your password!</label>
+            <input class="auth-element" id="userPass" name="userPass" type="password"/>
+            <button class="auth-element" id="loginButton">Login!</button>
+            <button class="auth-element" id="registerButton">Sign up!!</button>
+
+
+            <div id="commentDiv">
+                <span id="comment"></span>
+            </div>
+
+            
+        
+        </div>
+    </div>
+
+
+    <div class="ui-container">
+        <div class="stats">
+            <span><span id="moneyUI"></span>    <img src="../images/coin.png" alt="Coins" /></span>
+            <span><span id="moneyProdUI"></span><img src="../images/coin.png" alt="Coins" /> /s</span>
+            <span><span id="plantsUI"></span><img src="../images/leaf.png" alt="Plants" /></span>
+
+        </div>
+
+        <div class="auth-options" id="authOptions">
+            <div id="profilePlaque">
+                <span id="namePlaque"></span>
+                <button id="logOutButton">Log out</button>
+            </div>
+            <button id="openAuthButton">Authorise!</button>
+        </div>
+    </div>
+    <div class="garden-container">
+        <div id="plot1" class="plot">
+        </div>
+        <div id="plot2" class="plot">
+        </div>
+        <div id="plot3" class="plot">
+        </div>
+        <div id="plot4" class="plot">
+        </div>
+        <div id="plot5" class="plot">
+        </div>
+        <div id="plot6" class="plot">
+        </div>
+        <div id="plot7" class="plot">
+        </div>
+        <div id="plot8" class="plot">
+        </div>
+    </div>
+    
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+
+}
+
+
+
